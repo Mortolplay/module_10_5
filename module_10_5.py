@@ -4,10 +4,10 @@ import time
 def read_info(name):
     all_data = []
     with open(name, 'r', encoding="utf-8") as file:
-        while True:
-            data = file.readlines()
-            all_data.append(data)
-            if not data:
+        for i in file:
+            if i != "\n":
+                all_data.append(i)
+            else:
                 break
 
 if __name__ == '__main__':
